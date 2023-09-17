@@ -1,0 +1,5 @@
+/* Align option text to the left */
+.option {
+  margin-top: 10px;
+  text-align: left;
+}
