@@ -9,6 +9,7 @@ const startButton = document.getElementById("start-button");
 const quizContainer = document.getElementById("quiz-container");
 const endButton = document.getElementById("end-button");
 const saveScoreButton = document.getElementById("saveScore");
+const timeleftElement = document.getElementById("timeleft");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -193,6 +194,7 @@ function endQuiz() {
   gameOverScreen.style.display = "block";
   finalScoreElement.textContent = score;
   endButton.style.display = "none";
+  timeleftElement.style.display = "none";
 }
 
 // save score button
