@@ -27,4 +27,4 @@ Included screenshots shows the usage and the deployed URL.
 ![alt text](assets/images/Code-Quiz-03.png)
 ![alt text](assets/images/Code-Quiz-04.png)
 
-[Generate a password application URL]()
+[Coding quiz URL]()
