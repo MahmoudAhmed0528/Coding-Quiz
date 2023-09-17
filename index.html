@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Quiz</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container text-center mt-5">
+      <h1 class="mb-4">Code Quiz</h1>
+      <!-- start button to start the quiz -->
+      <button id="start-button" class="btn btn-primary btn-lg">
+        <!-- <button id="timer-container" class="btn btn-primary btn-lg" > -->
+        Start Quiz
+      </button>
+      <!-- end button to end the quiz at anytime -->
+      <button id="end-button" class="btn btn-danger" style="display: none">
+        End Now
+      </button>
+      <!-- the quiz quistions and answers options -->
+      <div id="quiz-container" class="mt-4" style="display: none">
+        <div class="text-center">
+          <p>
+            Time Left:
+            <span id="timer" class="badge badge-danger">30</span> seconds
+          </p>
+          <p>Score: <span id="score" class="badge badge-success">0</span></p>
+        </div>
+        <p id="question-text">Question 1 : "What does HTML stand for?"</p>
+        <ul id="options-list" class="list-group text-left">
+          <!-- Options will be added using JavaScript -->
+        </ul>
+      </div>
+      <!-- all-Done after the quiz done -->
+      <div id="all-Done!" class="mt-4" style="display: none">
+        <h2>All Done!</h2>
+        <p>Your Score: <span id="final-score">0</span></p>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="initials"
+            placeholder="Enter your initials"
+          />
+        </div>
+        <button id="saveScore" class="btn btn-success" ">
+          Save Score
+        </button>
+      </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
