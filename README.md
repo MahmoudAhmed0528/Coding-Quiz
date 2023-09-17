@@ -27,4 +27,4 @@ Included screenshots shows the usage and the deployed URL.
 ![alt text](assets/images/Code-Quiz-03.png)
 ![alt text](assets/images/Code-Quiz-04.png)
 
-[Coding quiz URL]()
+[Coding quiz URL](https://mahmoudahmed0528.github.io/Coding-Quiz/)
