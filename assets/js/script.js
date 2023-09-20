@@ -10,10 +10,11 @@ const quizContainer = document.getElementById("quiz-container");
 const endButton = document.getElementById("end-button");
 const saveScoreButton = document.getElementById("saveScore");
 const timeleftElement = document.getElementById("timeleft");
+const highScoresList = document.getElementById("high-scores-list");
 
 let currentQuestionIndex = 0;
 let score = 0;
-let timeLeft = 180;
+let timeLeft = 120;
 let timer;
 
 // Array of quiz questions
@@ -123,11 +124,16 @@ startButton.addEventListener("click", startQuiz);
 
 // start Quiz function
 function startQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  timeLeft = 120;
+  scoreElement.textContent = score;
   startButton.style.display = "none";
   quizContainer.style.display = "block";
   startTimer();
   displayQuestion();
-  endButton.style.display = "block";
+  endButton.style.display = "inline-block";
+  timeleftElement.style.display = "block";
 }
 
 function displayQuestion() {
@@ -209,9 +215,24 @@ function saveScore() {
     const scores = [{ initials, score }];
     // Save the new scores array to local storage
     localStorage.setItem("scores", JSON.stringify(scores));
-    // Reload the page to restart the quiz
-    window.location.reload();
+
+    highScores();
+
+    startButton.style.display = "inline-block";
+    quizContainer.style.display = "none";
+    endButton.style.display = "none";
+    gameOverScreen.style.display = "none";
   } else {
     alert("Please enter your initials before saving the score.");
   }
+}
+function highScores() {
+  const scores = JSON.parse(localStorage.getItem("scores")) || [];
+
+  scores.forEach((scoreData, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${scoreData.initials}: your score ${scoreData.score}`;
+    listItem.className = "list-group-item list-group-item-info";
+    highScoresList.appendChild(listItem);
+  });
 }
